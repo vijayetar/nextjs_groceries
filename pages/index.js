@@ -9,7 +9,7 @@ export default function Home() {
       <Link href="/about">
           <a>About</a>
       </Link>
-      <h1>Home Page</h1>
+      <h1>Groceries List</h1>
       <footer><small>0.0.1</small></footer>
       <style jsx>{`
         .hello {
