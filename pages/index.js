@@ -1,17 +1,26 @@
+import Link from 'next/link'
+
 export default function Home() {
   return (
     <div className="hello">
-      <p>Hello World</p>
+      <Link href="/">
+          <a>Home</a>
+      </Link>
+      <Link href="/about">
+          <a>About</a>
+      </Link>
+      <h1>Home Page</h1>
+      <footer><small>0.0.1</small></footer>
       <style jsx>{`
         .hello {
           font: 15px Helvetica, Arial, sans-serif;
-          background: #eee;
+          background: cornflowerblue;
           padding: 100px;
           text-align: center;
           transition: 100ms ease-in background;
         }
         .hello:hover {
-          background: #ccc;
+          background: lightpink;
         }
       `}</style>
     </div>
