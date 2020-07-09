@@ -1,7 +1,9 @@
 import Link from 'next/link'
+import styles from './Nav.module.scss'
 
 function Nav() {
     return (
+      <nav className={styles.nav}>
         <ul>
             <li>
                 <Link href="/">
@@ -14,6 +16,7 @@ function Nav() {
                 </Link>
             </li>
         </ul>
+      </nav>
     )
 }
 

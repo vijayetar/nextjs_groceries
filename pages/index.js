@@ -1,28 +1,61 @@
-import Link from 'next/link'
+import React from 'react'
+import axios from 'axios'
+import Nav from '../components/Nav'
+import GroceryForm from '../components/GroceryForm'
+import GroceryItem from '../components/GroceryItem'
 
-export default function Home() {
-  return (
-    <div className="hello">
-      <Link href="/">
-          <a>Home</a>
-      </Link>
-      <Link href="/about">
-          <a>About</a>
-      </Link>
-      <h1>Groceries List</h1>
-      <footer><small>0.0.1</small></footer>
-      <style jsx>{`
-        .hello {
-          font: 15px Helvetica, Arial, sans-serif;
-          background: cornflowerblue;
-          padding: 100px;
-          text-align: center;
-          transition: 100ms ease-in background;
+const url = 'https://groceries-fun-api.herokuapp.com/api/v1/groceries/';
+
+class Home extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            groceries: props.groceries
         }
-        .hello:hover {
-          background: lightpink;
-        }
-      `}</style>
-    </div>
-  )
+        this.groceryCreateHandler = this.groceryCreateHandler.bind(this);
+    }
+
+    async groceryCreateHandler(grocery) {
+
+        const response = await axios.post(url, grocery);
+
+        const savedGrocery = response.data;
+
+        const updatedGroceries = this.state.groceries.concat(savedGrocery);
+
+        this.setState({
+            groceries: updatedGroceries
+        })
+
+    }
+
+    render() {
+        return (
+            <div className="container">
+                <Nav />
+                <h1>Groceries Home</h1>
+                <ul>
+                    {this.state.groceries.map(grocery => <GroceryItem key={grocery.id} grocery={grocery} />)}
+                </ul>
+                <GroceryForm onGroceryCreate={this.groceryCreateHandler} />
+
+            </div>
+        )
+    }
+}
+
+export default Home
+
+// export async function getStaticProps() {
+export async function getServerSideProps() {
+
+    const response = await fetch(url);
+    const groceries = await response.json();
+
+    return {
+        props: {
+            groceries: groceries,
+        },
+    }
 }
