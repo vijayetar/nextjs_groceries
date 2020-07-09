@@ -18,9 +18,10 @@ export default function GroceryDetail(props) {
 
     return (
         <>
-        <Nav page="detail"/>
-        <h1>I am a single grocery {props.grocery.name}</h1>
-        <button onClick={() => deleteHandler(props.grocery.id)}>Delete</button>
+          <Nav page="detail"/>
+          <h1>I am a single grocery {props.grocery.name}</h1>
+          <p>My price is {props.grocery.price}</p>
+          <button onClick={() => deleteHandler(props.grocery.id)}>Delete</button>
         </>
     )
 }

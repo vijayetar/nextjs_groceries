@@ -5,12 +5,14 @@ export default class GroceryForm extends React.Component {
         super(props)
         this.state = {
             name : '',
+            price: '',
         }
-        this.handleChange = this.handleChange.bind(this);
+        this.handleChangeName = this.handleChangeName.bind(this);
+        this.handleChangePrice = this.handleChangePrice.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChange(event) {
+    handleChangeName(event) {
 
         const newName = event.target.value;
         this.setState({
@@ -18,11 +20,19 @@ export default class GroceryForm extends React.Component {
         })
 
     }
+    handleChangePrice(event) {
+
+        const newPrice = event.target.value;
+        this.setState({
+            price: newPrice,
+        })
+
+    }
 
     handleSubmit(event) {
         event.preventDefault();
         this.props.onGroceryCreate(this.state);
-        this.setState({name:''});
+        this.setState({name:'', price:''});
     }
 
     render() {
@@ -31,7 +41,13 @@ export default class GroceryForm extends React.Component {
                 <label>
                     Name:
                     <input
-                    name="grocery-name" type="text" value={this.state.name} onChange={this.handleChange}>
+                    name="grocery-name" type="text" value={this.state.name} onChange={this.handleChangeName}>
+                    </input>
+                </label>
+                <label>
+                    Price:
+                    <input
+                    name="grocery-name" type="text" value={this.state.price} onChange={this.handleChangePrice}>
                     </input>
                 </label>
 

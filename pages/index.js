@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import qs from 'qs'
 import Nav from '../components/Nav'
 import GroceryForm from '../components/GroceryForm'
 import GroceryItem from '../components/GroceryItem'
@@ -14,16 +15,23 @@ class Home extends React.Component {
             groceries: props.groceries
         }
         this.groceryCreateHandler = this.groceryCreateHandler.bind(this);
-    }
+    };
 
     async groceryCreateHandler(grocery) {
-
-        const response = await axios.post(url, grocery);
-
+        const config = {
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          }
+        };
+        grocery['user']= 1;
+        // grocery['price']=100;
+        console.log("grocery", grocery)
+        const response = await axios.post(url, qs.stringify(grocery), config);
         const savedGrocery = response.data;
 
         const updatedGroceries = this.state.groceries.concat(savedGrocery);
-
+        console.log('updatedGroceries IS:', updatedGroceries)
+        
         this.setState({
             groceries: updatedGroceries
         })
@@ -36,7 +44,7 @@ class Home extends React.Component {
                 <Nav page="home"/>
                 <h1>Groceries Home</h1>
                 <ul>
-                    {this.state.groceries.map(grocery => <GroceryItem key={grocery.id} grocery={grocery} />)}
+                    {this.state.groceries.map(grocery => <GroceryItem key={grocery.id} grocery={grocery}/>)}
                 </ul>
                 <GroceryForm onGroceryCreate={this.groceryCreateHandler} />
 
@@ -52,7 +60,6 @@ export async function getServerSideProps() {
 
     const response = await fetch(url);
     const groceries = await response.json();
-
     return {
         props: {
             groceries: groceries,
