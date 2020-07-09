@@ -13,5 +13,9 @@
     "react-dom": "^16.7.0",
     "sass": "^1.26.10"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "postcss-preset-env": "^6.7.0",
+    "tailwindcss": "^1.4.0"
+  }
 }

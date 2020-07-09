@@ -35,7 +35,7 @@ export default class GroceryForm extends React.Component {
                     </input>
                 </label>
 
-                <button>ok</button>
+                <button className="btn-pink">ok</button>
             </form>
         )
     }

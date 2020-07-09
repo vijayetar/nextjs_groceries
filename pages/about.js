@@ -3,7 +3,7 @@ import Nav from '../components/Nav'
 function About() {
     return (
         <>
-            <Nav />
+            <Nav page="about"/>
             <h1>About</h1>
         </>
     )

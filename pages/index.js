@@ -33,7 +33,7 @@ class Home extends React.Component {
     render() {
         return (
             <div className="container">
-                <Nav />
+                <Nav page="home"/>
                 <h1>Groceries Home</h1>
                 <ul>
                     {this.state.groceries.map(grocery => <GroceryItem key={grocery.id} grocery={grocery} />)}

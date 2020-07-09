@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import axios from 'axios'
+import Nav from '../../components/Nav'
 
 
 export default function GroceryDetail(props) {
@@ -17,6 +18,7 @@ export default function GroceryDetail(props) {
 
     return (
         <>
+        <Nav page="detail"/>
         <h1>I am a single grocery {props.grocery.name}</h1>
         <button onClick={() => deleteHandler(props.grocery.id)}>Delete</button>
         </>

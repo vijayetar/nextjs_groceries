@@ -1,10 +1,18 @@
-$primary-color: rgb(248, 230, 233);
+@tailwind base;
+@tailwind components;
+
+$primary-color:#d0bdf4;
 
 body{
-  padding: 20px 20px 60px;
-  margin: 0;
+  width:100%;
+  margin: 10vh;
   background-color: $primary-color;
   li {
     list-style: none
   };
+  .btn-pink {
+    @apply bg-pink-300 text-white font-bold py-2 px-6 rounded;
+  }
 }
+
+@tailwind utilities;

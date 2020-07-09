@@ -1,27 +1,41 @@
+$navcolor: #570e57;
+
 .nav {
   border: 1px solid black;
   background-color: whitesmoke;
   height: 10vh;
-  
+  display: inline-block;
+  align-content: center;
+  width: 100%;
+  margin: auto;
+
   ul{
-    display: inline-block;
+    width: 50%;
     list-style: none;
+    margin: auto;
   }
-  
   
   li {
     font-family:cursive;
     align-self: center;
     float: left;
-    margin: auto;
     padding: 3vh;
     margin-left: 20vh;
+    padding: 2vh, 2vh, 3vh, 2vh;
   }
-
+  
   a{
     text-decoration: none;
-    font: purple;
-
+    color:$navcolor;
+    font-size: 3vh;
   }
+  a:hover{
+    @apply border-gray-200 bg-gray-200;
+  }
+
+  a.active{
+    @apply inline-block border border-purple-300 rounded px-4 bg-purple-300 text-white
+  }
+
 
 }
