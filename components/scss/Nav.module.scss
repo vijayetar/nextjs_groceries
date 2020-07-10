@@ -1,7 +1,6 @@
 $navcolor: #570e57;
 
 .nav {
-  border: 1px solid black;
   background-color: whitesmoke;
   height: 10vh;
   display: inline-block;
@@ -22,6 +21,7 @@ $navcolor: #570e57;
     display: inline;
     margin-left: 20vh;
     padding: 5vh, 2vh, 3vh, 2vh;
+    border-radius: 1vh;
   }
   
   a{

@@ -4,6 +4,7 @@ import Nav from '../components/Nav'
 import GroceryForm from '../components/GroceryForm'
 import GroceryItem from '../components/GroceryItem'
 import styles from '../components/scss/Home.module.scss'
+import Footer from '../components/Footer'
 
 const url = 'https://groceries-fun-api.herokuapp.com/api/v1/groceries/';
 
@@ -34,6 +35,7 @@ class Home extends React.Component {
 
     render() {
         return (
+          <>
             <div className="container" className={styles.homepage}>
                 <Nav page="home"/>
                 <h1>Groceries List</h1>
@@ -43,6 +45,8 @@ class Home extends React.Component {
                 <GroceryForm onGroceryCreate={this.groceryCreateHandler} />
 
             </div>
+            <Footer />
+          </>
         )
     }
 }

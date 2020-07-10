@@ -33,6 +33,10 @@ input{
   padding:1vh;
   align-content: center;
   margin-left: 1vh;
+  border-radius: 1vh;
+}
+form{
+  margin-bottom: 5vh;
 }
 
 @tailwind utilities;
