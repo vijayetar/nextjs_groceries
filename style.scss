@@ -38,5 +38,29 @@ input{
 form{
   margin-bottom: 5vh;
 }
+.update{
+  h1{
+    font-family: fantasy;
+    font-size: 5vh;
+    margin:auto;
+    width:100%;
+    text-align: center;
+    margin-top: 3vh;
+  }
+  main{
+    height:100vh;
+  }
+  p{
+    font-family: fantasy;
+    font-size: 3.5vh;
+    margin:auto;
+    width:100%;
+    text-align: center;
+    margin-top: 3vh;
+    margin-bottom:3vh;
+
+  }
+  
+}
 
 @tailwind utilities;

@@ -2,7 +2,6 @@ import { useRouter } from 'next/router'
 import axios from 'axios'
 import Nav from '../../components/Nav'
 
-
 export default function GroceryDetail(props) {
 
     const url = 'https://groceries-fun-api.herokuapp.com/api/v1/groceries/';
@@ -19,9 +18,11 @@ export default function GroceryDetail(props) {
     return (
         <>
           <Nav page="detail"/>
+          <main className="update">
           <h1>I am a single grocery {props.grocery.name}</h1>
           <p>My price is {props.grocery.price}</p>
-          <button onClick={() => deleteHandler(props.grocery.id)}>Delete</button>
+          <button class="btn-pink" onClick={() => deleteHandler(props.grocery.id)}>Delete</button>
+          </main>
         </>
     )
 }
