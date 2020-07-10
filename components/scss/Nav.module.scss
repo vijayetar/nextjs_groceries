@@ -13,21 +13,22 @@ $navcolor: #570e57;
     width: 50%;
     list-style: none;
     margin: auto;
+    padding-top:3vh;
   }
   
   li {
     font-family:cursive;
     align-self: center;
-    float: left;
-    padding: 3vh;
+    display: inline;
     margin-left: 20vh;
-    padding: 2vh, 2vh, 3vh, 2vh;
+    padding: 5vh, 2vh, 3vh, 2vh;
   }
   
   a{
     text-decoration: none;
     color:$navcolor;
     font-size: 3vh;
+    text-align: center;
   }
   a:hover{
     @apply border-gray-200 bg-gray-200;
@@ -36,6 +37,5 @@ $navcolor: #570e57;
   a.active{
     @apply inline-block border border-purple-300 rounded px-4 bg-purple-300 text-white
   }
-
 
 }

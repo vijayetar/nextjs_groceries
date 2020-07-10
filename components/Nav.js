@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import styles from './Nav.module.scss'
+import styles from './scss/Nav.module.scss'
 
 function Nav(props) {
   function getStyle(page){

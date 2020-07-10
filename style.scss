@@ -3,16 +3,36 @@
 
 $primary-color:#d0bdf4;
 
-body{
+body {
   width:100%;
-  margin: 10vh;
   background-color: $primary-color;
   li {
-    list-style: none
-  };
+    list-style: none;
+  }
   .btn-pink {
     @apply bg-pink-300 text-white font-bold py-2 px-6 rounded;
+    font-size: 2vh;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 0.5vh;
   }
+  ul{
+    margin-bottom: 5vh;
+  }
+}
+* {
+  text-align: center;
+  margin: auto;
+}
+label{
+  margin: 2vh;
+  padding: 1vh;
+  font-family: fantasy;
+  font-size: 2vh;
+}
+input{
+  padding:1vh;
+  align-content: center;
+  margin-left: 1vh;
 }
 
 @tailwind utilities;
