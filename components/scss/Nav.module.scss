@@ -1,0 +1,41 @@
+$navcolor: #570e57;
+
+.nav {
+  background-color: whitesmoke;
+  height: 10vh;
+  display: inline-block;
+  align-content: center;
+  width: 100%;
+  margin: auto;
+
+  ul{
+    width: 50%;
+    list-style: none;
+    margin: auto;
+    padding-top:3vh;
+  }
+  
+  li {
+    font-family:cursive;
+    align-self: center;
+    display: inline;
+    margin-left: 20vh;
+    padding: 5vh, 2vh, 3vh, 2vh;
+    border-radius: 1vh;
+  }
+  
+  a{
+    text-decoration: none;
+    color:$navcolor;
+    font-size: 3vh;
+    text-align: center;
+  }
+  a:hover{
+    @apply border-gray-200 bg-gray-200;
+  }
+
+  a.active{
+    @apply inline-block border border-purple-300 rounded px-4 bg-purple-300 text-white
+  }
+
+}
